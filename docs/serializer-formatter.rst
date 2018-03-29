@@ -31,8 +31,8 @@ to ``KafkaAvroSerializer`` will
 cause a ``SerializationException``. Typically, ``IndexedRecord`` will be used for the value of the Kafka
 message. If used, the key of the Kafka message is often of one of the primitive types. When sending
 a message to a topic *t*, the Avro schema for the key and the value will be automatically registered
-in the schema registry under the subject *t-key* and *t-value*, respectively, if the compatibility
-test passes. The only exception is that the ``null`` type is never registered in the schema registry.
+in the Schema Registry under the subject *t-key* and *t-value*, respectively, if the compatibility
+test passes. The only exception is that the ``null`` type is never registered in the Schema Registry.
 
 In the following example, we send a message with key of type string and value of type Avro record
 to Kafka. A ``SerializationException`` may occur during the send call, if the data is not well formed.
@@ -138,6 +138,7 @@ receive Avro data in JSON format from the console. Under the hood, they use ``Av
 
 To run the Kafka console tools, first make sure that |zk|, Kafka and the Schema Registry server
 are all started. In the following examples, we use the default value of the schema registry URL.
+
 You can configure that by supplying
 
 .. sourcecode:: bash
